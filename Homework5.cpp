@@ -14,7 +14,15 @@ int main() {
 	VendingMachine* machine = new VendingMachine(slotCount); // Количество слотов для снеков
 	machine->addSlot(slot); // Помещаем слот обратно в аппарат
 
-	cout << machine->getEmptySlotsCount(); // Должно выводить количество пустых слотов для снеков
+	cout << "Vending machine consists of 10 slots with 10 cells for 10 chocolate bars" << endl
+		<< "The bars in the machine are: " << bounty->getSnackName() << ", " << snickers->getSnackName() << endl
+		<< "Number of filled slots in the machine is: " << machine->getSlotsCount() << endl
+		<< "Number of filled cells (with bars) in the slot is: " << slot->getCellsCount() << endl
+		<< "Number of empty slots in the machine is:" << machine->getEmptySlotsCount() << endl
+		<< "Number of empty cells in the slot is:" << slot->getEmptyCellsCount() << endl;
+
+
+
 	delete machine;
 	delete slot;
 	delete snickers;

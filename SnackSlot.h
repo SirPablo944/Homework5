@@ -6,10 +6,11 @@ public:
 	SnackSlot(int numberOfCells);
 	void addSnack(Snack* s);
 	int getSlotCount();
-	int slotPublicCount = getSlotCount();
+	int getEmptyCellsCount();
+	int getCellsCount();
 
 private:
-	int numberOfCells;
-	int snackCount;
-	int slotCount;
+	int _numberOfCells;
+	int _snackCount = 0;
+	int _slotCount = 0;
 };

@@ -3,15 +3,17 @@
 #include "SnackSlot.h"
 using namespace std;
 
-Snack::Snack(const char* snackName)
+Snack::Snack(const char* snackName) : _snackName(snackName)
 {
-	this->snackName = snackName;
+	_snackCount++;
 }
 
 int Snack::getSnackCount()
 {
-	snackCount++;
-	return snackCount;
+	return _snackCount;
 }
 
-
+const char* Snack::getSnackName()
+{
+	return _snackName;
+}

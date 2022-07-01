@@ -5,8 +5,9 @@ class Snack
 public:
 	Snack(const char* snackName);
 	int getSnackCount();
-	int snackPublicCount = getSnackCount();
+	const char* getSnackName();
+
 private:
-	const char* snackName;
-	int snackCount = 0;
+	const char* _snackName;
+	int _snackCount = 0;
 };

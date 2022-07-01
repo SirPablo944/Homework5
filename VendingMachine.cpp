@@ -4,16 +4,15 @@
 #include "VendingMachine.h"
 using namespace std;
 
-VendingMachine::VendingMachine(int numberOfSlots)
+VendingMachine::VendingMachine(int numberOfSlots) : _numberOfSlots(numberOfSlots)
 {
-	this->numberOfSlots = numberOfSlots;
 }
 
 void VendingMachine::addSlot(SnackSlot* s)
 {
-	if (this->slotCount < this->numberOfSlots)
+	if (this->_slotCount < this->_numberOfSlots)
 	{
-		this->slotCount += s->slotPublicCount;
+		this->_slotCount += s->getSlotCount();
 	}
 	else
 	{
@@ -23,5 +22,10 @@ void VendingMachine::addSlot(SnackSlot* s)
 
 int VendingMachine::getEmptySlotsCount()
 {
-	return this->numberOfSlots - this->slotCount;
+	return this->_numberOfSlots - this->_slotCount;
+}
+
+int VendingMachine::getSlotsCount()
+{
+	return this->_slotCount;
 }

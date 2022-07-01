@@ -4,16 +4,16 @@
 using namespace std;
 
 
-SnackSlot::SnackSlot(int numberOfCells)
+SnackSlot::SnackSlot(int numberOfCells) : _numberOfCells(numberOfCells)
 {
-	this->numberOfCells = numberOfCells;
+	_slotCount++;
 }
 
 void SnackSlot::addSnack(Snack* s)
 {
-	if (this->snackCount < this->numberOfCells)
+	if (this->_snackCount < this->_numberOfCells)
 	{
-		this->snackCount += s->snackPublicCount;
+		this->_snackCount += s->getSnackCount();
 	}
 	else
 	{
@@ -23,7 +23,15 @@ void SnackSlot::addSnack(Snack* s)
 
 int SnackSlot::getSlotCount()
 {
-	slotCount = 0;
-	slotCount++;
-	return slotCount;
+	return _slotCount;
+}
+
+int SnackSlot::getEmptyCellsCount()
+{
+	return this->_numberOfCells - this->_snackCount;
+}
+
+int SnackSlot::getCellsCount()
+{
+	return this->_snackCount;
 }

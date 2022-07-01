@@ -6,8 +6,9 @@ public:
 	VendingMachine(int numberOfSlots);
 	void addSlot(SnackSlot* s);
 	int getEmptySlotsCount();
+	int getSlotsCount();
 
 private:
-	int numberOfSlots;
-	int slotCount = 0;
+	int _numberOfSlots;
+	int _slotCount = 0;
 };
